@@ -9,24 +9,38 @@ interface IProps {}
 
 const Search: React.FC<IProps> = ({}) => {
   const [loading, setLoading] = React.useState<boolean>(true);
+  const [originalData, setOriginalData] = React.useState<ISymbolData[]>([]);
   const [data, setData] = React.useState<ISymbolData[]>([]);
 
   /**
-   * Fetches new symbol data.
+   * Fetches new symbol data
    */
-  const refresh = async () => {
+  const fetch = async () => {
     const res = await SymbolService.fetch();
+    setOriginalData(res);
     setData(res);
     setLoading(false);
   };
+  /**
+   * Filters data shown to user
+   * @param query - search query
+   */
+  const search = (query: string) => {
+    const dataCopy = [...data];
+    const filtered = dataCopy.filter((v) => {
+      const name = `${v.lSymbol}${v.rSymbol}`;
+      return name.includes(query.toUpperCase());
+    });
+    query ? setData(filtered) : setData(originalData);
+  };
 
   React.useEffect(() => {
-    refresh();
+    fetch();
   }, []);
 
   return !loading ? (
     <div className="p-3">
-      <SearchBar />
+      <SearchBar search={search} />
       <div className="search-column-label mb-1">
         <span className="text-muted">Name</span>
         <span className="text-muted search-column-label-offset">Price</span>

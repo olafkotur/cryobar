@@ -2,9 +2,11 @@ import { InputAdornment, TextField } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 import * as React from 'react';
 
-interface IProps {}
+interface IProps {
+  search: (query: string) => void;
+}
 
-const SearchBar: React.FC<IProps> = ({}) => {
+const SearchBar: React.FC<IProps> = ({ search }) => {
   return (
     <div>
       <TextField
@@ -13,6 +15,7 @@ const SearchBar: React.FC<IProps> = ({}) => {
         style={{ color: '#fff', fontSize: 6 }}
         placeholder="Search..."
         type="search"
+        onChange={(e) => search(e.target.value)}
         InputProps={{
           style: {
             color: '#fff',

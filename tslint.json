@@ -18,6 +18,7 @@
       true,
       { "limit": 120, "ignore-pattern": "//||console." }
     ],
-    "align": false
+    "align": false,
+    "ter-arrow-parens": false
   }
 }
