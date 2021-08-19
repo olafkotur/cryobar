@@ -15,7 +15,7 @@ const Saved: React.FC<IProps> = ({}) => {
    */
   const refresh = async () => {
     const res = await SymbolService.fetch();
-    setData([...res, ...res, ...res]);
+    setData(res.filter((v) => v.saved));
     setLoading(false);
   };
 

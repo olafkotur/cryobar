@@ -14,7 +14,7 @@ document.body.appendChild(mainElement);
 export type TPage = 'saved' | 'search';
 
 const App: React.FC<{}> = ({}) => {
-  const [page, setPage] = React.useState<TPage>('saved');
+  const [page, setPage] = React.useState<TPage>('search');
 
   // mui theme
   const theme = createMuiTheme({

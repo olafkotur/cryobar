@@ -1,0 +1,13 @@
+.search-symbol-container {
+  height: 400px;
+  overflow: scroll;
+}
+
+.search-column-label {
+  background-color: #1f2630;
+  width: 100%;
+}
+
+.search-column-label-offset {
+  margin-left: 104px;
+}

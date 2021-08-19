@@ -40,7 +40,7 @@ const SymbolService = {
         price: 4082,
         currency: 4081,
         growth: -0.01,
-        saved: true,
+        saved: false,
       },
       {
         lSymbol: 'DOGE',
