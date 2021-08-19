@@ -1,0 +1,29 @@
+.symbol-growth-green {
+  background-color: #2ebd85;
+}
+
+.symbol-growth-red {
+  background-color: #f6465d;
+}
+
+.symbol-label {
+  font-size: 14px;
+}
+
+.symbol-growth-container {
+  width: 75px;
+  height: 35px;
+  border-radius: 3px;
+}
+
+.symbol-column-name {
+  width: 140px;
+}
+
+.symbol-column-price {
+  width: 135px;
+}
+
+.symbol-column-growth {
+  width: 75px;
+}

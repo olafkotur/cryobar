@@ -1,0 +1,70 @@
+/********* General *********/
+body {
+  font-family: 'Verdana';
+  background-color: #1f2630;
+  color: #eaecef;
+  font-size: 12px;
+}
+
+hr {
+  background: #fff;
+  opacity: 0.075;
+}
+
+button:focus {
+  outline: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/********* Colors *********/
+.bg-primary {
+  background: #303136 !important;
+}
+
+.bg-secondary {
+  background: #1f2225 !important;
+}
+
+.bg-error {
+  background: #b33939 !important;
+}
+
+.bg-red {
+  background: red !important;
+}
+
+.bg-blue {
+  background: blue !important;
+}
+
+.primary {
+  color: #fff !important;
+}
+
+.secondary {
+  color: #b33939 !important;
+}
+
+.tertiary {
+  color: #227093 !important;
+}
+
+.quaternary {
+  color: #ccae62 !important;
+}
+
+.border-primary {
+  border-color: #fff !important;
+}
