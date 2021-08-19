@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { IconButton } from '@material-ui/core';
+import { Favorite, FavoriteBorder } from '@material-ui/icons';
 import { UtilService } from '../../services/util';
 import { ISymbolData } from '../../typings/d';
 import './symbol.css';
@@ -12,6 +14,13 @@ const Symbol: React.FC<IProps> = ({ data }) => {
     <div className="d-flex flex-row align-items-center justify-content-center mb-2">
       <div className="symbol-column-name">
         <div className="d-flex flex-row align-items-center">
+          <IconButton disableRipple size="small" className="p-0">
+            {data.saved ? (
+              <Favorite className="symbol-saved" color="primary" />
+            ) : (
+              <FavoriteBorder className="symbol-saved" color="secondary" />
+            )}
+          </IconButton>
           <span className="symbol-label mr-1">{data.lSymbol}</span>
           <span className="text-muted">/{data.rSymbol}</span>
           <br />

@@ -1,19 +1,20 @@
-import React from 'react';
-import Dashboard from './pages/Dashboard/Dashboard';
+import * as React from 'react';
+import Footer from './components/Footer/Footer';
+import Search from './pages/Search/Search';
+import Saved from './pages/Saved/Saved';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import { render } from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './custom.css';
-import Footer from './components/Footer/Footer';
 
 const mainElement = document.createElement('div');
 mainElement.setAttribute('id', 'root');
 document.body.appendChild(mainElement);
 
-export type TPage = 'dashboard' | 'search';
+export type TPage = 'saved' | 'search';
 
 const App: React.FC<{}> = ({}) => {
-  const [page, setPage] = React.useState<TPage>('dashboard');
+  const [page, setPage] = React.useState<TPage>('saved');
 
   // mui theme
   const theme = createMuiTheme({
@@ -55,7 +56,8 @@ const App: React.FC<{}> = ({}) => {
 
   return (
     <MuiThemeProvider theme={theme}>
-      {page === 'dashboard' && <Dashboard />}
+      {page === 'saved' && <Saved />}
+      {page === 'search' && <Search />}
       <Footer page={page} navigate={navigate} />
     </MuiThemeProvider>
   );

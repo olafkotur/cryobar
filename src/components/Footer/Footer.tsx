@@ -13,7 +13,7 @@ const Footer: React.FC<IProps> = ({ page, navigate }) => {
   return (
     <div className="d-flex justify-content-end align-items-center footer-container">
       <Navigation
-        self="dashboard"
+        self="saved"
         page={page}
         navigate={navigate}
         Icon={FavoriteBorder}

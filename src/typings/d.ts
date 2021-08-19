@@ -26,4 +26,5 @@ export interface ISymbolData {
   price: number;
   currency: number;
   growth: number;
+  saved: boolean;
 }

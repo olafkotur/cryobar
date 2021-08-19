@@ -27,3 +27,9 @@
 .symbol-column-growth {
   width: 75px;
 }
+
+.symbol-saved {
+  margin-right: 2px;
+  align-self: center;
+  font-size: 11px !important;
+}

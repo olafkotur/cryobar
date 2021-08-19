@@ -1,13 +1,13 @@
-.dashboard-symbol-container {
+.saved-symbol-container {
   height: 455px;
   overflow: scroll;
 }
 
-.dashboard-column-label {
+.saved-column-label {
   background-color: #1f2630;
   width: 100%;
 }
 
-.dashboard-column-label-offset {
+.saved-column-label-offset {
   margin-left: 104px;
 }

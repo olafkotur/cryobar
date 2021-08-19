@@ -13,6 +13,7 @@ const SymbolService = {
         price: 0.9585,
         currency: 384.13,
         growth: -3.96,
+        saved: true,
       },
       {
         lSymbol: 'ADA',
@@ -21,6 +22,7 @@ const SymbolService = {
         price: 0.00224974,
         currency: 1.99,
         growth: 0.83,
+        saved: true,
       },
       {
         lSymbol: 'BTC',
@@ -29,6 +31,7 @@ const SymbolService = {
         price: 44018,
         currency: 44017,
         growth: 2.5,
+        saved: true,
       },
       {
         lSymbol: 'ETH',
@@ -37,6 +40,7 @@ const SymbolService = {
         price: 4082,
         currency: 4081,
         growth: -0.01,
+        saved: true,
       },
       {
         lSymbol: 'DOGE',
@@ -45,6 +49,7 @@ const SymbolService = {
         price: 0.32,
         currency: 0.31,
         growth: 52.8211,
+        saved: false,
       },
     ];
   },

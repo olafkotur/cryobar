@@ -1,13 +1,12 @@
 import * as React from 'react';
-import Footer from '../../components/Footer/Footer';
 import Symbol from '../../components/Symbol/Symbol';
 import SymbolService from '../../services/symbol';
 import { ISymbolData } from '../../typings/d';
-import './dashboard.css';
+import './saved.css';
 
 interface IProps {}
 
-const Dashboard: React.FC<IProps> = ({}) => {
+const Saved: React.FC<IProps> = ({}) => {
   const [loading, setLoading] = React.useState<boolean>(true);
   const [data, setData] = React.useState<ISymbolData[]>([]);
 
@@ -26,14 +25,12 @@ const Dashboard: React.FC<IProps> = ({}) => {
 
   return !loading ? (
     <div className="p-3">
-      <div className="dashboard-column-label mb-1">
+      <div className="saved-column-label mb-1">
         <span className="text-muted">Name</span>
-        <span className="text-muted dashboard-column-label-offset">Price</span>
-        <span className="text-muted dashboard-column-label-offset">
-          24h Change
-        </span>
+        <span className="text-muted saved-column-label-offset">Price</span>
+        <span className="text-muted saved-column-label-offset">24h Change</span>
       </div>
-      <div className="dashboard-symbol-container">
+      <div className="saved-symbol-container">
         {data.map((symbol, i) => (
           <Symbol key={`symbol-${i}`} data={symbol} />
         ))}
@@ -44,4 +41,4 @@ const Dashboard: React.FC<IProps> = ({}) => {
   );
 };
 
-export default Dashboard;
+export default Saved;
