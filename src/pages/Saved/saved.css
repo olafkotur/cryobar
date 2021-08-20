@@ -11,3 +11,12 @@
 .saved-column-label-offset {
   margin-left: 104px;
 }
+
+.saved-empty {
+  height: 470px;
+}
+
+.saved-empty-text {
+  color: #e8ba41;
+  cursor: pointer;
+}

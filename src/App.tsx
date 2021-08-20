@@ -14,7 +14,7 @@ document.body.appendChild(mainElement);
 export type TPage = 'saved' | 'search';
 
 const App: React.FC<{}> = ({}) => {
-  const [page, setPage] = React.useState<TPage>('search');
+  const [page, setPage] = React.useState<TPage>('saved');
 
   // mui theme
   const theme = createMuiTheme({
@@ -56,7 +56,7 @@ const App: React.FC<{}> = ({}) => {
 
   return (
     <MuiThemeProvider theme={theme}>
-      {page === 'saved' && <Saved />}
+      {page === 'saved' && <Saved navigate={navigate} />}
       {page === 'search' && <Search />}
       <Footer page={page} navigate={navigate} />
     </MuiThemeProvider>

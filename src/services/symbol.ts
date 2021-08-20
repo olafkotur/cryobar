@@ -53,6 +53,13 @@ const SymbolService = {
       },
     ];
   },
+
+  /**
+   * Fetches saved symbol data.
+   */
+  fetchSaved: async (): Promise<ISymbolData[]> => {
+    return [];
+  },
 };
 
 export default SymbolService;
