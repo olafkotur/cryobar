@@ -1,57 +1,30 @@
-import { ISymbolData } from '../typings/d';
+import { config } from '../config';
+import { IBinanceSymbolPriceData, ISymbolData } from '../typings/d';
+import { RequestService } from './request';
+import _ from 'lodash';
 
 const SymbolService = {
   /**
    * Fetches symbol info data.
    */
   fetch: async (): Promise<ISymbolData[]> => {
-    return [
-      {
-        lSymbol: 'AAVE',
-        rSymbol: 'BNB',
-        volume: 4654.07,
-        price: 0.9585,
-        currency: 384.13,
-        growth: -3.96,
-        saved: true,
-      },
-      {
-        lSymbol: 'ADA',
-        rSymbol: 'BNB',
-        volume: 20635.37,
-        price: 0.00224974,
-        currency: 1.99,
-        growth: 0.83,
-        saved: true,
-      },
-      {
-        lSymbol: 'BTC',
-        rSymbol: 'USDT',
-        volume: 8187312.1,
-        price: 44018,
-        currency: 44017,
-        growth: 2.5,
-        saved: true,
-      },
-      {
-        lSymbol: 'ETH',
-        rSymbol: 'USDT',
-        volume: 1982771.1,
-        price: 4082,
-        currency: 4081,
-        growth: -0.01,
-        saved: false,
-      },
-      {
-        lSymbol: 'DOGE',
-        rSymbol: 'USDT',
-        volume: 982982771.1,
-        price: 0.32,
-        currency: 0.31,
-        growth: 52.8211,
-        saved: false,
-      },
-    ];
+    const url = `${config.binanceUrl}/api/v3/ticker/price`;
+    const data =
+      ((await RequestService.get(
+        url,
+        {},
+        false,
+      )) as IBinanceSymbolPriceData[]) || [];
+
+    return _.sortBy(data, 'symbol').map((v) => ({
+      lSymbol: v.symbol,
+      rSymbol: '',
+      volume: 4654.07,
+      price: parseFloat(v.price || '0'),
+      currency: 384.13,
+      growth: -3.96,
+      saved: true,
+    }));
   },
 
   /**
@@ -59,6 +32,10 @@ const SymbolService = {
    */
   fetchSaved: async (): Promise<ISymbolData[]> => {
     return [];
+  },
+
+  toggleSave: async (symbol: ISymbolData): Promise<void> => {
+    console.log('toggle saving/unsaving');
   },
 };
 

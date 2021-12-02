@@ -28,3 +28,20 @@ export interface ISymbolData {
   growth: number;
   saved: boolean;
 }
+
+export type IRequestMethod = 'get' | 'post';
+
+export interface IRequestHeaders {
+  [key: string]: string;
+}
+
+export interface IRequestOptions {
+  url: string;
+  method: IRequestMethod;
+  headers?: IRequestHeaders;
+}
+
+export interface IBinanceSymbolPriceData {
+  symbol: string;
+  price: string;
+}

@@ -33,6 +33,7 @@ const menu = MenuBar({
     webPreferences: {
       devTools: DEVELOPMENT,
       nodeIntegration: true,
+      webSecurity: false,
     },
   },
 });
